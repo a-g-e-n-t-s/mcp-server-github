@@ -3,7 +3,7 @@
  */
 import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { allToolDefinitions } from '@/mcp-server/tools/definitions/index.js';
-import { createMcpToolHandler } from '@/mcp-server/tools/utils/toolHandlerFactory.js';
+import { createMcpToolHandler } from '@/mcp-server/tools/utils/tool-handler-factory.js';
 import { logger } from '@/utils/index.js';
 
 export async function registerAllTools(server: McpServer): Promise<void> {

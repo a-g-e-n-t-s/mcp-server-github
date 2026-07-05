@@ -4,7 +4,7 @@
 import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { config } from '@/config/index.js';
 import { startStdioTransport } from '@/mcp-server/transports/stdio/stdioTransport.js';
-import { startHttpTransport } from '@/mcp-server/transports/http/httpTransport.js';
+import { startHttpTransport } from '@/mcp-server/transports/http/http-transport.js';
 import { logger } from '@/utils/index.js';
 
 export async function startTransport(

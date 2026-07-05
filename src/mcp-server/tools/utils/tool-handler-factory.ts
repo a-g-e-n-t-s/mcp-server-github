@@ -4,8 +4,8 @@
  */
 import { container } from 'tsyringe';
 import { GitHubProviderToken } from '@/container/tokens.js';
-import type { SdkContext } from '@/mcp-server/tools/utils/toolDefinition.js';
-import type { GitHubProvider } from '@/services/github/GitHubProvider.js';
+import type { SdkContext } from '@/mcp-server/tools/utils/tool-definition.js';
+import type { GitHubProvider } from '@/services/github/github-provider.js';
 import { McpError } from '@/types-global/errors.js';
 import {
   ErrorHandler,
