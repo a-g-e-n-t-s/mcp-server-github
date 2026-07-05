@@ -5,12 +5,13 @@ import { z } from 'zod';
 import type { ToolDefinition } from '../utils/toolDefinition.js';
 import { createGitHubToolHandler, createJsonFormatter } from '../utils/toolHandlerFactory.js';
 import type { GitHubToolDependencies } from '../utils/toolHandlerFactory.js';
+import { OwnerSchema, RepoSchema } from '../schemas/common.js';
 
 const TOOL_NAME = 'github_update_pr';
 
 const InputSchema = z.object({
-  owner: z.string().describe('Repository owner'),
-  repo: z.string().describe('Repository name'),
+  owner: OwnerSchema,
+  repo: RepoSchema,
   pull_number: z.number().describe('Pull request number to update'),
   title: z.string().optional().describe('New title'),
   body: z.string().optional().describe('New description'),

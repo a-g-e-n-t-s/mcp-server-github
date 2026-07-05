@@ -5,12 +5,13 @@ import { z } from 'zod';
 import type { ToolDefinition } from '../utils/toolDefinition.js';
 import { createGitHubToolHandler, createJsonFormatter } from '../utils/toolHandlerFactory.js';
 import type { GitHubToolDependencies } from '../utils/toolHandlerFactory.js';
+import { OwnerSchema, RepoSchema } from '../schemas/common.js';
 
 const TOOL_NAME = 'github_list_prs';
 
 const InputSchema = z.object({
-  owner: z.string().describe('Repository owner'),
-  repo: z.string().describe('Repository name'),
+  owner: OwnerSchema,
+  repo: RepoSchema,
   state: z.enum(['open', 'closed', 'all']).optional().describe('Filter by state (default: open)'),
   head: z.string().optional().describe('Filter by head user/org and branch (e.g., "user:branch")'),
   base: z.string().optional().describe('Filter by base branch'),

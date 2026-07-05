@@ -31,7 +31,9 @@
     "typecheck": "bunx tsc --noEmit",
     "lint": "bunx eslint .",
     "lint:fix": "bunx eslint . --fix",
-    "rebuild": "rm -rf dist && bun run build"
+    "rebuild": "rm -rf dist && bun run build",
+    "test": "bun test --config vitest.config.ts",
+    "test:coverage": "bun test --coverage"
   },
   "dependencies": {
     "@octokit/rest": "^22.0.0",
@@ -51,6 +53,9 @@
     "hono": "^4.10.3",
     "tsyringe": "^4.10.0",
     "typescript": "^5.9.3",
+    "vitest": "^4.0.4",
+    "@vitest/coverage-v8": "^4.0.4",
+    "vite-tsconfig-paths": "^5.1.4",
     "zod": "^3.23.8"
   },
   "keywords": [
