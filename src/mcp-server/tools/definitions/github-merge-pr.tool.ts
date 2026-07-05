@@ -5,12 +5,13 @@ import { z } from 'zod';
 import type { ToolDefinition } from '../utils/toolDefinition.js';
 import { createGitHubToolHandler, createJsonFormatter } from '../utils/toolHandlerFactory.js';
 import type { GitHubToolDependencies } from '../utils/toolHandlerFactory.js';
+import { OwnerSchema, RepoSchema } from '../schemas/common.js';
 
 const TOOL_NAME = 'github_merge_pr';
 
 const InputSchema = z.object({
-  owner: z.string().describe('Repository owner'),
-  repo: z.string().describe('Repository name'),
+  owner: OwnerSchema,
+  repo: RepoSchema,
   pull_number: z.number().describe('Pull request number'),
   merge_method: z.enum(['merge', 'squash', 'rebase']).optional().describe('Merge strategy'),
   commit_title: z.string().optional().describe('Title for the merge commit'),

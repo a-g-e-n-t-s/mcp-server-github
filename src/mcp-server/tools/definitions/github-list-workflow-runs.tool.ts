@@ -2,12 +2,13 @@ import { z } from 'zod';
 import type { ToolDefinition } from '../utils/toolDefinition.js';
 import { createGitHubToolHandler, createJsonFormatter } from '../utils/toolHandlerFactory.js';
 import type { GitHubToolDependencies } from '../utils/toolHandlerFactory.js';
+import { OwnerSchema, RepoSchema } from '../schemas/common.js';
 
 const TOOL_NAME = 'github_list_workflow_runs';
 
 const InputSchema = z.object({
-  owner: z.string().describe('Repository owner'),
-  repo: z.string().describe('Repository name'),
+  owner: OwnerSchema,
+  repo: RepoSchema,
   workflow_id: z.union([z.string(), z.number()]).optional().describe('Workflow ID or filename'),
   branch: z.string().optional().describe('Branch name to filter by'),
   event: z.string().optional().describe('Event type to filter by'),

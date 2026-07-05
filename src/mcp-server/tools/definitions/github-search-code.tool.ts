@@ -3,6 +3,7 @@ import type { ToolDefinition } from '../utils/toolDefinition.js';
 import { createGitHubToolHandler, createJsonFormatter } from '../utils/toolHandlerFactory.js';
 import type { GitHubToolDependencies } from '../utils/toolHandlerFactory.js';
 
+
 const TOOL_NAME = 'github_search_code';
 
 const InputSchema = z.object({
