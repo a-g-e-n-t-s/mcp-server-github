@@ -5,6 +5,30 @@ import { Octokit } from '@octokit/rest';
 import { McpError, JsonRpcErrorCode } from '@/types-global/errors.js';
 import { config } from '@/config/index.js';
 import { logger } from '@/utils/index.js';
+import type {
+  CreatePullRequestParams, CreatePullRequestResult,
+  GetPullRequestParams, GetPullRequestResult,
+  ListPullRequestsParams, ListPullRequestsResult,
+  MergePullRequestParams, MergePullRequestResult,
+  UpdatePullRequestParams, UpdatePullRequestResult,
+  CreateIssueParams, CreateIssueResult,
+  GetIssueParams, GetIssueResult,
+  ListIssuesParams, ListIssuesResult,
+  UpdateIssueParams, UpdateIssueResult,
+  CreateCommentParams, CreateCommentResult,
+  CreateReviewParams, CreateReviewResult,
+  ListReviewsParams, ListReviewsResult,
+  ListWorkflowRunsParams, ListWorkflowRunsResult,
+  GetWorkflowRunParams, GetWorkflowRunResult,
+  RerunWorkflowParams, RerunWorkflowResult,
+  DispatchWorkflowParams, DispatchWorkflowResult,
+  CreateReleaseParams, CreateReleaseResult,
+  ListReleasesParams, ListReleasesResult,
+  GetReleaseParams, GetReleaseResult,
+  GetRepoParams, GetRepoResult,
+  CompareCommitsParams, CompareCommitsResult,
+  SearchCodeParams, SearchCodeResult,
+} from './types.js';
 
 export class GitHubProvider {
   private octokit: Octokit;
