@@ -2,9 +2,9 @@
  * @fileoverview Tool: github_update_pr — Edit a pull request.
  */
 import { z } from 'zod';
-import type { ToolDefinition } from '../utils/toolDefinition.js';
-import { createGitHubToolHandler, createJsonFormatter } from '../utils/toolHandlerFactory.js';
-import type { GitHubToolDependencies } from '../utils/toolHandlerFactory.js';
+import type { ToolDefinition } from '../utils/tool-definition.js';
+import { createGitHubToolHandler, createJsonFormatter } from '../utils/tool-handler-factory.js';
+import type { GitHubToolDependencies } from '../utils/tool-handler-factory.js';
 import { OwnerSchema, RepoSchema } from '../schemas/common.js';
 
 const TOOL_NAME = 'github_update_pr';
